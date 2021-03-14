@@ -16,7 +16,7 @@ function setAttrs(node, prop, value){
             node.style.cssText = value;
             break;
         default:
-            node.setAttribute(prop,value);
+            node.setAttribute(prop, value);
             break;
     }
 }
@@ -43,7 +43,7 @@ function render(vDom){
     return el;
 }
 
-function renderDOM(rDom,rootEl){
+function renderDOM(rDom, rootEl){
     rootEl.appendChild(rDom);
 }
 
