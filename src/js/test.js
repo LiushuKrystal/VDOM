@@ -4,19 +4,25 @@ const patches = {
         //第0项有可能有多个改变，也就是补丁
         {
             type: 'ATTR',
-            attr: 'list-wrap'
+            attrs: {
+                class: 'list-wrap'
+            }
         }
     ],
     2:[
         {
             type: 'ATTR',
-            attr: 'title'
+            attrs: {
+                class: 'title'
+            }
         }
     ],
     3:[
         {
             type: 'TEXT',
-            attr: ''
+            attrs: {
+
+            }
         }
     ],
     6:[

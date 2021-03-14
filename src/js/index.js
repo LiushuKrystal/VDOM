@@ -1,5 +1,9 @@
 import { createElement, render,renderDOM } from './virtualDom';
 import domDiff from './domDiff';
+import doPatch from './doPatch';
+import Element from './Element';
+
+console.log(Element);
 
 const vDom1 = createElement('ul',
     {
@@ -56,13 +60,14 @@ const vDom2 = createElement('ul',{
     },['第三个列表项'])
 ]);
 
-// const newVDom = createElement()
-//
-// const rDom = render(vDom);
-//
-// renderDOM(rDom, document.getElementById('app'));
+const rDom = render(vDom1);
+
+renderDOM(rDom, document.getElementById('app'));
 
 const patches =  domDiff(vDom1, vDom2);
+
+//给已经存在的真实的dom打补丁
+doPatch(rDom, patches);
 
 console.log(patches);
 

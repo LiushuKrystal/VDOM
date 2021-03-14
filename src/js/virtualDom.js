@@ -21,7 +21,7 @@ function setAttrs(node, prop, value){
     }
 }
 
-//虚拟DOM转换成真实DOM的函数
+//虚拟DOM转换成真实DOM的函数，返回根Dom节点
 function render(vDom){
     const { type, props, children } = vDom,
         el = document.createElement(type);

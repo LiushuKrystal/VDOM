@@ -18,8 +18,7 @@ function domDiff (oldVDom, newVDom) {
 
 //一个节点的walk函数，index表示当前节点的标号
 function vNodeWalk (oldNode, newNode, index) {
-    //每个节点都要有一个自己的补丁
-    console.log(oldNode,newNode,index);
+    //每个节点都要有一个自己的补丁数组
     let vnPatch = [];
 
     //以下四种情况分别对应四个patchTypes：REMOVE,TEXT,ATTR,REPLACE
@@ -67,6 +66,9 @@ function attrsWalk(oldAttrs, newAttrs){
 
     for(let key in oldAttrs){
         //修改属性
+        if(key == 'style'){
+            console.log(newAttrs[key]);
+        }
         if(oldAttrs[key] !== newAttrs[key]){
             attrPatch[key] = newAttrs[key];
         }
